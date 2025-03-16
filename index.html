@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Years of Us, Part 2</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #ff66b2; /* Soft pink */
+        }
+        .timeline-container {
+            width: 80%;
+            margin: 50px auto;
+            position: relative;
+        }
+        .timeline {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+        .timeline li {
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            color: white; /* Text color for the gradient backgrounds */
+        }
+        .timeline li:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: -10px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+        .timeline li:hover {
+            cursor: pointer;
+            opacity: 0.9;
+        }
+        .timeline button {
+            padding: 10px 20px;
+            background-color: white;
+            color: #ff66b2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        .timeline button:hover {
+            background-color: #ff3385;
+            color: white;
+        }
+        .modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    width: 30%; /* Adjusted the width to 30% to make the modal smaller */
+    text-align: center;
+}
+
+.modal img {
+    max-width: 70%; /* Adjusts the image size to fill 70% of the modal's width */
+    height: auto; /* Maintains the image's aspect ratio */
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+        .modal button {
+            margin-top: 10px;
+            background-color: #ff66b2;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* Gradient Backgrounds for each event */
+        .event1 {
+            background: linear-gradient(135deg, #ff66b2, #ff99cc);
+        }
+        .event2 {
+            background: linear-gradient(135deg, #4CAF50, #81C784);
+        }
+        .event3 {
+            background: linear-gradient(135deg, #FF9800, #FFB74D);
+        }
+        .event4 {
+            background: linear-gradient(135deg, #2196F3, #64B5F6);
+        }
+        .event5 {
+            background: linear-gradient(135deg, #673AB7, #9575CD);
+        }
+        .event6 {
+            background: linear-gradient(135deg, #9C27B0, #BA68C8);
+        }
+        .event7 {
+            background: linear-gradient(135deg, #FFC107, #FFEB3B);
+        }
+        .event8 {
+            background: linear-gradient(135deg, #F44336, #E57373);
+        }
+        .event9 {
+            background: linear-gradient(135deg, #00BCD4, #4DD0E1);
+        }
+        .event10 {
+            background: linear-gradient(135deg, #FF5722, #FF8A65);
+        }
+        
+        
+    </style>
+</head>
+<body>
+
+    <h1>3 Years of Us, Part 2</h1>
+    <h2>Our Special Journey Continues</h2>
+
+    <div class="timeline-container">
+        <ul class="timeline">
+            <!-- Event 1 -->
+            <li class="event1">
+                <span class="date">24/02/2023</span>
+                <h3>Amazing Grub Monkeys Day</h3>
+                <button onclick="showDescription('desc1')">See the Moment</button>
+                <button onclick="showImage('img1')">See Picture</button>
+            </li>
+            <!-- Event 2 -->
+            <li class="event2">
+                <span class="date">25/02/2023</span>
+                <h3>Hosted Leo Event Together</h3>
+                <button onclick="showDescription('desc2')">See the Moment</button>
+                <button onclick="showImage('img2')">See Picture</button>
+            </li>
+            <!-- Event 3 -->
+            <li class="event3">
+                <span class="date">06/03/2023</span>
+                <h3>You Invited Me to Your Home</h3>
+                <button onclick="showDescription('desc3')">See the Moment</button>
+                <button onclick="showImage('img3')">See Picture</button>
+            </li>
+            <!-- Event 4 -->
+            <li class="event4">
+                <span class="date">15/03/2023</span>
+                <h3>2nd Birthday Together</h3>
+                <button onclick="showDescription('desc4')">See the Moment</button>
+                <button onclick="showImage('img4')">See Picture</button>
+            </li>
+            <!-- Event 5 -->
+            <li class="event5">
+                <span class="date">01/06/2023</span>
+                <h3>First Ride Together (Nandan's Brother's Wedding)</h3>
+                <button onclick="showDescription('desc5')">See the Moment</button>
+                <button onclick="showImage('img5')">See Picture</button>
+            </li>
+            <!-- Event 6 -->
+            <li class="event6">
+                <span class="date">29/06/2023</span>
+                <h3>A Special Ethnic Day</h3>
+                <button onclick="showDescription('desc6')">See the Moment</button>
+                <button onclick="showImage('img6')">See Picture</button>
+            </li>
+            <!-- Event 7 -->
+            <li class="event7">
+                <span class="date">02/08/2023</span>
+                <h3>RJS NSS Activity</h3>
+                <button onclick="showDescription('desc7')">See the Moment</button>
+                <button onclick="showImage('img7')">See Picture</button>
+            </li>
+            <!-- Event 8 -->
+            <li class="event8">
+                <span class="date">January (Whole Month)</span>
+                <h3>Many Videos and Tears</h3>
+                <button onclick="showDescription('desc8')">See the Moment</button>
+                <button onclick="showImage('img8')">See Picture</button>
+            </li>
+            <!-- Event 9 -->
+            <li class="event9">
+                <span class="date">29/02/2024</span>
+                <h3>Darshan's Housewarming</h3>
+                <button onclick="showDescription('desc9')">See the Moment</button>
+                <button onclick="showImage('img9')">See Picture</button>
+            </li>
+            <!-- Event 10 -->
+            <li class="event10">
+                <span class="date">15/03/2024</span>
+                <h3>3rd Birthday Together</h3>
+                <button onclick="showDescription('desc10')">See the Moment</button>
+                <button onclick="showImage('img10')">See Picture</button>
+            </li>
+        </ul>
+    </div>
+
+    <div id="event-modal" class="modal">
+        <p id="event-description"></p>
+        <img id="event-image" src="" alt="Event Image">
+        <button onclick="closeModal()">Close</button>
+    </div>
+
+    <script>
+        function showDescription(eventId) {
+            var descriptions = {
+                desc1: {
+                    text: "FOUND AN AMAZING CORNER SEAT , CAMERA BLIND SPOT, AND THE SEX THIS DAY WAS FUCKIN AMAZING. LIKE AMMMMAAZZZING. i still remember snippets from the sesh we had in the washroom, you were in that hot cream sweater type top. Goated DAY. Tried doggy w you for the first time ever. Best feeling everrrrr"
+                },
+                desc2: {
+                    text: "Got dressed in formals and hosted an event w you, amazing amazing day man , such a couple thing. lowkey felt proud of myself . NESAMAAAAGURENNNN"
+                },
+                desc3: {
+                    text: "Missed java internals to spend time w you , i was mad excited this day , lmao we did the deed 3 times -washroom , yo bedroom , yo parents bedroom . i remember not being able to take my hands off you. ALMOST LOST MY SHIT WHEN I WAS HIDING IN THE WASHROOM WHEN THE DOOR BELL RANG !!. real cute day , i helped you get dressed for the haldi function. i was a pull out goat that day"
+                },
+                desc4: {
+                    text: "idk why you aren't excited for your bdays man. i nicely got cake and many people had internals that day , requested them all to stay for cake cutting. nice pics we took and went tera bites. cute dayyyyy"
+                },
+                desc5: {
+                    text: "man this was suchhhhh aaaa harddd couple day for me. We literally went on a 120km ride . SOLID FAMILY STUFF. sorry for spoiling the mood that day by raising my voice at times. it was a new exp for me tooo . Im sorry"
+                },
+                desc6: {
+                    text: "We got such amazing pic this day and i saw you in that amazing lavender saree , I saw an angell. this photoshoot is j special to me . VERY SPECIAL. "
+                },
+                desc7: {
+                    text: "we both went to that class in rjs and interacted w those kids. A very new exp for me , doing stuff w you is sooo damn fun da seriously, i could be chummma sitting and if youre there ill be happy. very nice it was being around all those kids. Nicely you got hit on by all those kids"
+                },
+                desc8: {
+                    text: "many vids of you crying , me crying , the whole reel becoming viral and all that happened . I am responsible for every single tear that came from your eyes. I wish i can go back in time and slap myself for doing that , I really love you da. really really do."
+                },
+                desc9: {
+                    text: "Another familyyyyyy feeling , man i was tooo excited to get you here and show you and intro you to all my friends. You looked like a dollll in that red dress. nicely i took you to eat in sendhoors . man i love roaming with you daaaa"
+                },
+                desc10: {
+                    text: "Man, this was a killer bday, nicely cut cake, went to Chinlungs, me, you, and Jaffer and all. I was very satisfied with the way I did everything tbhhhh."
+                }
+            };
+
+            var event = descriptions[eventId];
+            document.getElementById("event-description").innerText = event.text;
+            document.getElementById("event-image").style.display = "none"; // Hide image
+            document.getElementById("event-modal").style.display = "block";
+        }
+
+        function showImage(eventId) {
+            var images = {
+                img1: { imageUrl: "https://postimage.me/images/2025/03/15/IMG_20250316_001813.jpg" },
+                img2: { imageUrl: "https://postimage.me/images/2025/03/16/IMG-20250315-WA0005.jpg" },
+                img3: { imageUrl: "https://postimage.me/images/2025/03/16/IMG-20250315-WA0007.jpg" },
+                img4: { imageUrl: "https://postimage.me/images/2025/03/16/IMG-20250316-WA0000.jpg" },
+                img5: { imageUrl: "https://postimage.me/images/2025/03/16/IMG-20250315-WA0008.jpg" },
+                img6: { imageUrl: "https://postimage.me/images/2025/03/16/IMG-20250315-WA0009.jpg" },
+                img7: { imageUrl: "https://postimage.me/images/2025/03/16/IMG-20250315-WA0010.jpg" },
+                img8: { imageUrl: "https://your-image-url.com/photo8.jpg" },
+                img9: { imageUrl: "https://postimage.me/images/2025/03/16/IMG-20250315-WA0011.jpg" },
+                img10: { imageUrl: "https://your-image-url.com/photo10.jpg" }
+            };
+
+            var event = images[eventId];
+            document.getElementById("event-image").src = event.imageUrl;
+            document.getElementById("event-description").innerText = ""; // Hide description
+            document.getElementById("event-image").style.display = "block"; // Show image
+            document.getElementById("event-modal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("event-modal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
